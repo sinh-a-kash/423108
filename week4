@@ -1,0 +1,63 @@
+# Using grep
+
+# Q1. Find all lines containing the word "error" in a log file (log.txt).
+grep "error" log.txt
+
+# Q2. Count the occurrences of the word "success" in a file (data.txt).
+grep -c "success" data.txt
+
+# Q3. Extract all lines from a file (records.txt) that start with a digit.
+grep "^[0-9]" records.txt
+
+# Q4. Display all lines in file.txt that do not contain the word "failed".
+grep -v "failed" file.txt
+
+# Q5. Find all .txt files in the current directory that contain the word "TODO".
+grep -l "TODO" *.txt
+
+# Q6. Extract email addresses from contacts.txt (Hint: Use regex).
+grep -oE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" contacts.txt
+
+
+
+# "Using sed"
+
+# Q1. Replace all occurrences of "foo" with "bar" in text.txt.
+sed 's/foo/bar/g' text.txt
+
+# Q2. Delete all blank lines from input.txt.
+sed '/^$/d' input.txt
+
+# Q3. Remove leading and trailing spaces from each line in whitespace.txt.
+sed 's/^[[:space:]]*//;s/[[:space:]]*$//' whitespace.txt
+
+# Q4. Insert a new line with the text "Header: Report" at the beginning of report.txt.
+sed '1 i Header: Report' report.txt
+
+# Q5. Replace all instances of multiple spaces with a single space in file.txt.
+sed 's/  */ /g' file.txt
+
+# Q6. Swap the first and second word in each line of swap.txt.
+sed 's/\(\w\+\) \(\w\+\)/\2 \1/' swap.txt
+
+
+
+# Using awk
+
+# Q1. Print only the second column from a space-separated file (data.txt).
+awk '{print $2}' data.txt
+
+# Q2. Sum the numbers in the third column of values.txt.
+awk '{sum += $3} END {print sum}' values.txt
+
+# Q3. Count the number of lines in log.txt that contain the word "warning".
+awk '/warning/ {count++} END {print count}' log.txt
+
+# Q4. Print all lines in marks.txt where the second column is greater than 50.
+awk '$2 > 50 {print}' marks.txt
+
+# Q5. Print only the first and last columns from a tab-separated file (data.csv).
+awk -F'\t' '{print $1, $NF}' data.csv
+
+# Q6. Calculate and print the average of the numbers in the second column of numbers.csv.
+awk '{sum += $2; count++} END {if (count > 0) print sum / count}' numbers.csv
