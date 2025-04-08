@@ -1,0 +1,103 @@
+# Q1. Write a Shell program to check the given number is even or odd
+echo "Enter a number:"
+read num
+
+if (( num % 2 == 0 )); then
+  echo "$num is an even number."
+else
+  echo "$num is an odd number."
+fi
+
+echo ""
+
+
+
+# Q2. Write a Shell program to check the given year is leap year or not
+echo "Enter a year:"
+read year
+
+if (( (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) )); then
+  echo "$year is a leap year."
+else
+  echo "$year is not a leap year."
+fi
+
+echo ""
+
+
+
+# Q3. Write a Shell program to find the factorial of a number
+echo "Enter a non-negative integer:"
+read n
+
+if (( n < 0 )); then
+  echo "Factorial is not defined for negative numbers."
+elif (( n == 0 )); then
+  factorial=1
+  echo "Factorial of $n is $factorial"
+else
+  factorial=1
+  i=1
+  while (( i <= n )); do
+    factorial=$((factorial * i))
+    i=$((i + 1))
+  done
+  echo "Factorial of $n is $factorial"
+fi
+
+echo ""
+
+
+
+# Q4. Write a Shell program to swap the two integers
+echo "Enter the first integer:"
+read num1
+echo "Enter the second integer:"
+read num2
+
+echo "Before swapping: num1 = $num1, num2 = $num2"
+
+temp=$num1
+num1=$num2
+num2=$temp
+
+echo "After swapping: num1 = $num1, num2 = $num2"
+
+echo ""
+
+
+
+# Q5. Write a shell script to compute GCD & LCM of two numbers.
+function gcd() {
+  local a=$1
+  local b=$2
+  while (( b != 0 )); do
+    local temp=$b
+    b=$((a % b))
+    a=$temp
+  done
+  echo $a
+}
+
+echo "Enter the first number:"
+read num_a
+echo "Enter the second number:"
+read num_b
+
+common_divisor=$(gcd $num_a $num_b)
+least_common_multiple=$(( (num_a * num_b) / common_divisor ))
+
+echo "GCD of $num_a and $num_b is: $common_divisor"
+echo "LCM of $num_a and $num_b is: $least_common_multiple"
+
+echo ""
+
+
+
+# Q6. Shell Program to Print Numbers from 1 to 10 using While Loop
+counter=1
+echo "Printing numbers from 1 to 10 using a while loop:"
+while (( counter <= 10 )); do
+  echo "$counter"
+  counter=$((counter + 1))
+done
