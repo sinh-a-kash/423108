@@ -1,0 +1,18 @@
+# Q1.
+awk '/ERROR/ {print $1, $4}' logfile.txt # Assuming logfile.txt is the name of your log file
+
+
+# Q2.
+awk -F'\t' 'NR > 1 {sum_math += $2; sum_science += $3; sum_english += $4; count++} END {print "Average Math:", sum_math / count; print "Average Science:", sum_science / count; print "Average English:", sum_english / count}' scores.tsv # Assuming scores.tsv is the name of your file
+
+
+# Q3.
+awk '{ip_count[$1]++} END {for (ip in ip_count) print ip, ip_count[ip]}' server.log # Assuming server.log is the name of your log file
+
+
+#Q4.
+sed 's/^\(\w\+\)\(.*\s\)\(\w\+\)$/\3\2\1/' text_lines.txt # Assuming text_lines.txt is the name of your file
+
+
+#Q5.
+sed 's/\(\b\w\+\b\) \1/\1/g' duplicate_words.txt # Assuming duplicate_words.txt is the name of your file
