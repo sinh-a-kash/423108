@@ -1,0 +1,41 @@
+Q1.
+# (i) To print the name of the operating system
+uname -s
+
+# (ii) To print the login name
+whoami
+
+# (iii) To print the host name
+hostname
+
+Q2.
+# (i) Jan 2024
+cal 1 2024
+
+# (ii) Feb 1995
+cal 2 1995
+
+# (iii) 9th month of the year 7 A.D. (Assuming Gregorian calendar)
+cal 9 0007
+
+# (iv) For the current month
+cal
+
+# (v) Current Date Day Abbreviation, Month Abbreviation along with year
+date "+%a, %b %Y"
+
+Q3.
+# 12-Hour Notation (with AM/PM)
+date "+%I:%M:%S %p"
+
+# 24-Hour Notation
+date "+%H:%M:%S"
+
+Q4.
+date
+
+Q5.
+figlet "GOOD MORNING"
+
+Q6.
+echo $HOME
